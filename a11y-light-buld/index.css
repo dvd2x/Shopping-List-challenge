@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  min-width: 250px;
+  max-width: 960px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.lightbulb {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.bulb-on {
+  background-color: yellow;
+}
