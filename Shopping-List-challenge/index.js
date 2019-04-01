@@ -1,4 +1,4 @@
-$(function() {
+const handleSubmit = function() {
   $(".container").submit(event => {
     event.preventDefault();
     // Prevent form default
@@ -20,22 +20,29 @@ $(function() {
 
     $(".shopping-list").append(item);
     //sending new shopping list item to bottom of list
-
-    /* ************ CHECK ************ */
-    $(".shopping-list").on("click", ".shopping-item-toggle", function() {
-      $(this)
-        .closest("li")
-        .find(".shopping-item")
-        .toggleClass("shopping-item__checked");
-    });
-    // this check marks mark your item on your list
-
-    /* ************ DELETE *************** */
-    $(".shopping-list").on("click", ".shopping-item-delete", function() {
-      $(this)
-        .closest("li")
-        .remove();
-    });
-    //this button delets an item on your list
   });
-});
+};
+const handleCheck = function() {
+  $(".shopping-list").on("click", ".shopping-item-toggle", function() {
+    console.log("check", this);
+    $(this)
+      .closest("li")
+      .find(".shopping-item")
+      .toggleClass("shopping-item__checked");
+  });
+};
+
+const handleDelete = function() {
+  $(".shopping-list").on("click", ".shopping-item-delete", function() {
+    console.log("delete", this);
+    $(this)
+      .closest("li")
+      .remove();
+  });
+};
+const setUpEventHandlers = function() {
+  handleSubmit();
+  handleCheck();
+  handleDelete();
+};
+$(setUpEventHandlers);
